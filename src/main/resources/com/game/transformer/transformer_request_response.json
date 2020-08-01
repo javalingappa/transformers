@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The object contains request/response attributes required to list/create/update transformer",
+  "title": "TransformerObject",
+  "type": "object",
+  "required": [
+    "transformer",
+    "type",
+    "strength",
+    "intelligence",
+    "speed",
+    "endurance",
+    "rank",
+    "courage",
+    "firepower",
+    "skill"
+  ],
+  "properties": {
+    "id": {
+      "description": "Transformer id",
+      "type": "integer"
+    },
+    "transformer": {
+      "type": "string",
+      "description": "Name of the transformer"
+    },
+    "type": {
+      "description": "type of transformer like Autobots and Decepticons",
+      "type": "string"
+    },
+    "strength": {
+      "description": "Strengthof the transformer",
+      "type": "integer"
+    },
+    "intelligence": {
+      "description": "Intelligence the transformer",
+      "type": "integer"
+    },
+    "speed": {
+      "description": "Speed the transformer",
+      "type": "integer"
+    },
+    "endurance": {
+      "description": "Endurance the transformer",
+      "type": "integer"
+    },
+    "rank": {
+      "description": "Rank the transformer",
+      "type": "integer"
+    },
+    "courage": {
+      "description": "Courage the transformer",
+      "type": "integer"
+    },
+    "firepower": {
+      "description": "Firepower the transformer",
+      "type": "integer"
+    },
+    "skill": {
+      "description": "Skill the transformer",
+      "type": "integer"
+    }
+  }
+}

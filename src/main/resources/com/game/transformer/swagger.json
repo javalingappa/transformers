@@ -1,0 +1,419 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Transformer Game",
+    "version": "1.0.0",
+    "description": "Transformer Game",
+    "contact": {
+      "name": "Javalingappa"
+    },
+    "license": {
+      "name": "Commercial"
+    }
+  },
+  "basePath": "/api/v1",
+  "produces": [
+    "application/json"
+  ],
+  "responses": {
+    "x-comment": "these are the common response types. Its easier to keep this section in each service.",
+    "ServiceError": {
+      "description": "general service error",
+      "schema": {
+        "$ref": "./service_error.json"
+      }
+    }
+  },
+  "paths": {
+    "/transformers/save": {
+      "post": {
+        "operationId": "saveTransformer",
+        "summary": "Saves a new transformer into database",
+        "description": "This API saves new transformer to database",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "transformer",
+            "in": "body",
+            "type": "object",
+            "description": "Transformers to save or update into the database",
+            "required": "true",
+            "schema": {
+              "$ref": "./transformer_request_response.json"
+            }
+
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "$ref": "./transformer_request_response.json"
+            },
+            "type": "array"
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/transformers/save/all": {
+      "post": {
+        "operationId": "saveAllTransformer",
+        "summary": "Saves all new transformers into database",
+        "description": "This API saves all new transformer to database",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "transformer",
+            "in": "body",
+
+            "description": "Transformers to save or update into the database",
+            "required": "true",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./transformer_request_response.json"
+              }
+            }
+
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./transformer_request_response.json"
+              }
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/transformers/play": {
+      "post": {
+        "operationId": "playTransformerGame",
+        "summary": "Play game and return expected result",
+        "description": "This API palys the game and return expected result",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "transformersIds",
+            "in": "body",
+            "description": "Transformers to save or update into the database",
+            "required": "true",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "$ref": "./transformer_game_response.json"
+            },
+            "type": "array"
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/transformers/update": {
+      "put": {
+        "operationId": "updateTransformers",
+        "summary": "update existing transformers in database",
+        "description": "This API updates existing transformers to database",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "transformer",
+            "in": "body",
+            "type": "object",
+            "description": "Transformers to save or update into the database",
+            "required": "true",
+            "schema": {
+              "$ref": "./transformer_request_response.json"
+            }
+
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "$ref": "./transformer_request_response.json"
+            },
+            "type": "array"
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/transformers/list": {
+      "get": {
+        "operationId": "getAllTransformers",
+        "summary": "This API retrieves all the transformers ",
+        "description": "",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./transformer_request_response.json"
+              }
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/transformers/{id}": {
+      "get": {
+        "operationId": "getTransformersById",
+        "summary": "This API retrieves transformer based on given id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Search and retrieves transformer based on given id",
+            "type": "integer",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+                "$ref": "./transformer_request_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/transformers/erase": {
+      "delete": {
+        "operationId": "deleteAllTransformers",
+        "summary": "This API delets all the transformers",
+        "description": "",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "type": "object",
+              "$ref": "./transformer_delete_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/transformers/erase/{id}": {
+      "delete": {
+        "operationId": "deleteTransformerById",
+        "summary": "This API delets transformer based on id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Search and retrieves transformer based on given id",
+            "type": "integer",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "type": "object",
+              "$ref": "./transformer_delete_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    }
+  }
+}

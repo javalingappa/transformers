@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The object contains response attributes required",
+  "title": "ResponseMessage",
+  "type": "object",
+  "required": [
+    "message"
+  ],
+  "properties": {
+    "message": {
+      "description": "response message",
+      "type": "string"
+    }
+  }
+}

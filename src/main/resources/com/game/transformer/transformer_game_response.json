@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The object contains response attributes required",
+  "title": "TransformerResponse",
+  "type": "object",
+  "required": [
+    "battle",
+    "winner",
+    "survivor"
+  ],
+  "properties": {
+    "battle": {
+      "type": "integer",
+      "description": "number of battle"
+    },
+    "winner": {
+      "description": "Winning team",
+      "type": "string"
+    },
+    "survivor": {
+      "description": "Survivor team",
+      "type": "string"
+    }
+  }
+}
